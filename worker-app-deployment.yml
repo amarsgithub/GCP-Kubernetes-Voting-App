@@ -8,7 +8,8 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: worker-deployment
+      name: worker-app-pod
+      app: demo-voting-app
   template:
     metadata:
       name: worker-app-pod
@@ -21,5 +22,5 @@ spec:
         image: dockersamples/examplevotingapp_worker
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "512Mi"
+            cpu: "1000m"
